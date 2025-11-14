@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All-in-One Album Keren</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>📂 My Album</h2>
+  <a href="#upload">📤 Upload</a>
+  <a href="#gallery">🖼 Galeri</a>
+</div>
+
+<div class="content">
+  <!-- Upload Section -->
+  <section id="upload">
+    <h2>📤 Upload Gambar</h2>
+    <p>Pilih kategori/folder:</p>
+    <select id="folderSelect" class="form-select" style="max-width:300px;">
+      <option value="Nature">Nature</option>
+      <option value="Anime">Anime</option>
+      <option value="Animals">Animals</option>
+    </select>
+
+    <div id="dropArea" class="drop-area mt-3">
+      Tarik & lepas gambar di sini atau klik untuk pilih
+      <input type="file" id="fileInput" multiple>
+    </div>
+    <p class="text-muted mt-2">Upload akan otomatis ke GitHub repository via API</p>
+  </section>
+
+  <hr>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>🖼 Galeri Album</h2>
+    <div id="galleryContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <!-- JS akan generate album di sini -->
+    </div>
+  </section>
+</div>
+
+<!-- Modal Preview -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-body text-center">
+        <img id="modalImg" src="" style="max-width:100%; border-radius:10px;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
